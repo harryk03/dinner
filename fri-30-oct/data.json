@@ -1,0 +1,366 @@
+{
+ "slug": "fri-30-oct",
+ "title": "Where are we eating Friday?",
+ "kicker": "Fri 30 Oct \u00b7 Table for 6",
+ "lede": "Seven spots in the CBD and Surry Hills with a table for six still free. Tap every time that works for you, star your top pick, then submit your vote.",
+ "dayLabel": "Fri 30 Oct",
+ "party": 6,
+ "deadline": "2026-10-22T21:00:00+11:00",
+ "deadlineLabel": "9 pm Thu",
+ "checked": "Tables checked Thu 22 Oct, 8:15 am",
+ "note": "No venue on this list had a table for six at 7:00 or 7:15. Ragazzi, Neptune\u2019s Grotto and Pellegrino 2000 were fully booked all evening.",
+ "areas": [
+  {
+   "id": "cbd",
+   "label": "CBD"
+  },
+  {
+   "id": "sh",
+   "label": "Surry Hills"
+  }
+ ],
+ "venues": [
+  {
+   "id": "spezia",
+   "name": "Spezia",
+   "cuisine": "Italian",
+   "area": "cbd",
+   "areaLabel": "CBD",
+   "hook": "Hidden courtyard, Michelin-trained chefs, Italian with Silk Road spices.",
+   "addr": "5 Gresham St \u00b7 The Lands by Capella, Circular Quay",
+   "why": "New this year. A heritage sandstone courtyard with red awnings and a chequered dining room, run by chefs from Norway's two-Michelin-star Re-naa. The Italian menu has a Silk Road accent.",
+   "order": "Grilled octopus with nduja, ravioli with dukkah and pecorino, blue swimmer crab spaghetti, tiramisu",
+   "know": "500-bottle wine list with 36 by the glass",
+   "links": [
+    {
+     "t": "Spezia",
+     "d": "Italian at The Lands by Capella, Circular Quay",
+     "u": "https://spezia.com.au/",
+     "dom": "spezia.com.au"
+    },
+    {
+     "t": "Spezia on OpenTable",
+     "d": "Photos, reviews and the menu",
+     "u": "https://www.opentable.com.au/r/spezia-sydney",
+     "dom": "opentable.com.au"
+    }
+   ],
+   "times": [
+    "19:30",
+    "20:00",
+    "20:30"
+   ],
+   "photos": [
+    {
+     "src": "photos/spezia-1.webp",
+     "alt": "Spezia's courtyard: red awnings over sandstone walls, potted trees and a terracotta bar",
+     "pos": "50% 55%",
+     "cap": "The courtyard"
+    },
+    {
+     "src": "photos/spezia-2.webp",
+     "alt": "Spezia antipasti on a marble bar: crudo with olive oil, olives, peppers, greens and grissini",
+     "pos": "50% 50%",
+     "cap": "Antipasti"
+    },
+    {
+     "src": "photos/spezia-3.webp",
+     "alt": "A Spezia table: oysters, flatbread, small plates and red cocktails on pink marble",
+     "pos": "50% 50%",
+     "cap": "Drinks & snacks"
+    }
+   ]
+  },
+  {
+   "id": "osteria-luna",
+   "name": "Osteria Luna",
+   "cuisine": "Italian-American",
+   "area": "cbd",
+   "areaLabel": "CBD",
+   "hook": "Basement supper club with velvet curtains, booths and live jazz.",
+   "addr": "Underground, 68 King St (beneath The Charles)",
+   "why": "Down the stairs under The Charles: burgundy velvet, blue leather booths, low brass light and live jazz. Rat Pack energy, and the most properly underground pick here.",
+   "order": "Tableside caprese, conchiglie alla vodka, pork cotoletta, pippies olio e aglio",
+   "know": "Loud and lively. The kitchen runs until 1 am",
+   "links": [
+    {
+     "t": "Osteria Luna menus",
+     "d": "Underground Italian joint, 68 King St",
+     "u": "https://osterialuna.sydney/menus/",
+     "dom": "osterialuna.sydney"
+    }
+   ],
+   "times": [
+    "20:15",
+    "20:30"
+   ],
+   "photos": [
+    {
+     "src": "photos/osteria-luna-1.webp",
+     "alt": "Osteria Luna's dining room: a round table in white linen with bentwood chairs, a glowing fluted wall and framed photos",
+     "pos": "50% 60%",
+     "cap": "The room"
+    },
+    {
+     "src": "photos/osteria-luna-2.webp",
+     "alt": "Osteria Luna plates on white linen: focaccia, a crudo and a seafood dish in broth, with a glass of white",
+     "pos": "50% 50%",
+     "cap": "The food"
+    },
+    {
+     "src": "photos/osteria-luna-3.webp",
+     "alt": "The Osteria Luna sign above its King Street doorway, with stairs leading down",
+     "pos": "50% 40%",
+     "cap": "The way in"
+    }
+   ]
+  },
+  {
+   "id": "aalia",
+   "name": "Aalia",
+   "cuisine": "Middle Eastern",
+   "area": "cbd",
+   "areaLabel": "CBD",
+   "hook": "Two-hatted, fire-cooked Middle Eastern on Martin Place.",
+   "addr": "25 Martin Place \u00b7 MLC Centre",
+   "why": "Two hats. Paul Farag cooks over Blue Mountains ironbark, with dishes researched from 10th-century Arabic cookbooks. Timber columns and warm light. The big-night-out option.",
+   "order": "Beef nayyeh, smoked buffalo labne, dry-aged duck, chocolate kataifi",
+   "know": "10% service charge for groups of 6+. The banquet is only compulsory from 7 people, so we can order \u00e0 la carte",
+   "links": [
+    {
+     "t": "Aalia \u00e0 la carte menu",
+     "d": "Current dinner menu (PDF)",
+     "u": "https://cdn.sanity.io/files/quf0k1c7/production/1d1fb9b483d59f4517b71e297d80c5df31d44666.pdf",
+     "dom": "aaliarestaurant.com",
+     "pdf": true
+    },
+    {
+     "t": "Aalia banquets",
+     "d": "Set menus for groups (PDF)",
+     "u": "https://cdn.sanity.io/files/quf0k1c7/production/ae417f5030c680afb735a690bc1fffc24aeb513a.pdf",
+     "dom": "aaliarestaurant.com",
+     "pdf": true
+    },
+    {
+     "t": "Aalia",
+     "d": "Two-hatted Middle Eastern restaurant, Sydney",
+     "u": "https://www.aaliarestaurant.com/",
+     "dom": "aaliarestaurant.com"
+    }
+   ],
+   "times": [
+    "20:00",
+    "20:15",
+    "20:30"
+   ],
+   "photos": [
+    {
+     "src": "photos/aalia-1.webp",
+     "alt": "Aalia's dining room at night: curved timber ceiling over the bar, glass walls onto Martin Place",
+     "pos": "50% 55%",
+     "cap": "The room"
+    },
+    {
+     "src": "photos/aalia-2.webp",
+     "alt": "A spread of Aalia dishes from above: oysters, dips, flatbread, pastries and a cocktail",
+     "pos": "50% 50%",
+     "cap": "The spread"
+    },
+    {
+     "src": "photos/aalia-3.webp",
+     "alt": "Aalia's grilled octopus on a crumb, plated in a warm-lit room",
+     "pos": "50% 50%",
+     "cap": "Octopus"
+    }
+   ]
+  },
+  {
+   "id": "nour",
+   "name": "Nour",
+   "cuisine": "Lebanese",
+   "area": "sh",
+   "areaLabel": "Surry Hills",
+   "hook": "Hatted modern Lebanese on a leafy stretch of Crown St.",
+   "addr": "3/490 Crown St, Surry Hills",
+   "why": "Aalia's hatted sister on a leafy stretch of Crown Street. Modern Lebanese built for sharing, from mezze to a coal grill, in a bright room that opens onto a courtyard.",
+   "order": "Malawach with pistachio ezme, beef nayeh, coal-grilled dry-aged steak, fattoush",
+   "know": "Hatted. Smart casual",
+   "links": [
+    {
+     "t": "Nour menus",
+     "d": "Modern Lebanese, Surry Hills",
+     "u": "https://www.noursydney.com/menus",
+     "dom": "noursydney.com"
+    }
+   ],
+   "times": [
+    "20:00",
+    "20:15",
+    "20:30"
+   ],
+   "photos": [
+    {
+     "src": "photos/nour-1.webp",
+     "alt": "Nour's dining room: bentwood chairs and white tables beside glass doors onto a leafy courtyard",
+     "pos": "50% 50%",
+     "cap": "The room"
+    },
+    {
+     "src": "photos/nour-2.webp",
+     "alt": "Nour dishes from above: glazed ribs with roast tomatoes, rice, a grain salad and flatbread",
+     "pos": "50% 50%",
+     "cap": "The food"
+    }
+   ]
+  },
+  {
+   "id": "sofia",
+   "name": "Sofia",
+   "cuisine": "Greek",
+   "area": "sh",
+   "areaLabel": "Surry Hills",
+   "hook": "Upstairs Greek under timber rafters, rated 4.9 on OpenTable.",
+   "addr": "Level 1, 433 Cleveland St (above Bar Cleveland)",
+   "why": "Justin North's Greek dining room upstairs in an 1800s building: timber rafters, sandstone walls, a long lit bar, share plates and good cocktails. Right on the Surry Hills\u2013Redfern line.",
+   "order": "Pomegranate-cured ocean trout, garlic king prawns, lamb ribs, 800g bistecca for the table, galaktoboureko",
+   "know": "Banquets at $89 or $115 a head if we want one",
+   "links": [
+    {
+     "t": "Sofia on Cleveland",
+     "d": "Greek-inspired dining, Surry Hills",
+     "u": "https://sofiaoncleveland.com/",
+     "dom": "sofiaoncleveland.com"
+    },
+    {
+     "t": "Sofia on OpenTable",
+     "d": "Photos and 400+ reviews",
+     "u": "https://www.opentable.com.au/r/sofia-on-cleveland-redfern",
+     "dom": "opentable.com.au"
+    }
+   ],
+   "times": [
+    "19:45",
+    "20:00",
+    "20:15",
+    "20:30"
+   ],
+   "photos": [
+    {
+     "src": "photos/sofia-1.webp",
+     "alt": "Sofia's upstairs dining room: timber rafters, sandstone walls, a lit bar and rattan chairs",
+     "pos": "50% 55%",
+     "cap": "The room"
+    },
+    {
+     "src": "photos/sofia-2.webp",
+     "alt": "Sofia's sliced bistecca with fries, salad, greens and a glass of red",
+     "pos": "50% 50%",
+     "cap": "The bistecca"
+    },
+    {
+     "src": "photos/sofia-3.webp",
+     "alt": "A Sofia table from above: lobster spaghetti, steak, dips, bread, olives and fries",
+     "pos": "50% 45%",
+     "cap": "The spread"
+    }
+   ]
+  },
+  {
+   "id": "olympus",
+   "name": "Olympus",
+   "cuisine": "Greek",
+   "area": "sh",
+   "areaLabel": "Surry Hills",
+   "hook": "Huge Greek room with a glass roof and a tree in the middle.",
+   "addr": "2 Baptist St \u00b7 Wunderlich Lane",
+   "why": "From the team behind The Apollo and Cho Cho San. A lavish room with a retractable glass ceiling and a bougainvillea tree in the middle. More than 40 dishes, half of them meze.",
+   "order": "Taramasalata, spanakopita, milk-fed lamb with pilafi, wood-fired whole trout, Ouzo Colada",
+   "know": "Three set menus available. Very popular: booked 125 times on Thursday alone",
+   "links": [
+    {
+     "t": "Olympus Dining",
+     "d": "Greek taverna, Wunderlich Lane",
+     "u": "https://olympusdining.com.au/",
+     "dom": "olympusdining.com.au"
+    },
+    {
+     "t": "Olympus review",
+     "d": "Broadsheet's take on the room and the menu",
+     "u": "https://www.broadsheet.com.au/sydney/redfern/restaurants/olympus",
+     "dom": "broadsheet.com.au"
+    }
+   ],
+   "times": [
+    "20:00",
+    "20:15",
+    "20:30"
+   ],
+   "photos": [
+    {
+     "src": "photos/olympus-1.webp",
+     "alt": "Olympus at night: candlelit tables under the tree beneath the glass roof",
+     "pos": "50% 62%",
+     "cap": "The room"
+    },
+    {
+     "src": "photos/olympus-2.webp",
+     "alt": "Olympus dish: slow-cooked lamb with tzatziki and lemon, with a pie and greens on the side",
+     "pos": "50% 50%",
+     "cap": "The food"
+    }
+   ]
+  },
+  {
+   "id": "vitellis",
+   "name": "Vitelli's Upstairs",
+   "cuisine": "Italian-American",
+   "area": "sh",
+   "areaLabel": "Surry Hills",
+   "hook": "New York red-sauce Italian, candlelit, with DJs from 8 pm.",
+   "addr": "Wunderlich Lane \u00b7 corner of Cleveland & Baptist Sts",
+   "why": "Red velour, heavy curtains and candlesticks. Saucy, generous New York-style Italian with fresh pasta from Grana. Gourmet Traveller says it's been full since it opened.",
+   "order": "Porchetta-crusted ribs, vodka rigate with chicken parm, fried lasagne bites, tiramisu",
+   "know": "DJs from 8 pm on Fridays and the room tilts into a bar. Fun, but loud",
+   "links": [
+    {
+     "t": "Vitelli's Upstairs review",
+     "d": "Gourmet Traveller on the red-sauce revival",
+     "u": "https://www.gourmettraveller.com.au/restaurant-reviews/vitellis-upstairs/",
+     "dom": "gourmettraveller.com.au"
+    },
+    {
+     "t": "Vitelli's Upstairs",
+     "d": "Concrete Playground's guide",
+     "u": "https://concreteplayground.com/sydney/restaurants/vitellis-upstairs/amp",
+     "dom": "concreteplayground.com"
+    }
+   ],
+   "times": [
+    "20:15",
+    "20:30"
+   ],
+   "photos": [
+    {
+     "src": "photos/vitellis-1.webp",
+     "alt": "A candlelit table at Vitelli's Upstairs: chicken parm on pasta, meatballs, garlic bread and red wine beside a red velour booth",
+     "pos": "50% 50%",
+     "cap": "The table"
+    },
+    {
+     "src": "photos/vitellis-2.webp",
+     "alt": "A fork twirling spaghetti in red sauce at Vitelli's, candle and wine glasses behind",
+     "pos": "50% 50%",
+     "cap": "The pasta"
+    },
+    {
+     "src": "photos/vitellis-3.webp",
+     "alt": "Vitelli's bar after dark: a wall of vinyl records lit above the bar, a candle on a small table",
+     "pos": "50% 45%",
+     "cap": "The bar"
+    }
+   ]
+  }
+ ],
+ "resultsVisibility": "afterClose",
+ "organiserKey": "oolvvx04"
+}

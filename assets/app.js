@@ -67,13 +67,17 @@
     $("app").innerHTML = `<div class="err"><b>This dinner couldn't load</b><span class="who">Check the link with Harry, or refresh in a minute.</span></div>`;
   });
 
+  let VIS = "afterClose", ORG = false;
   function init(data) {
     D = data; VENUES = data.venues || []; byId = Object.fromEntries(VENUES.map((v) => [v.id, v]));
     DEADLINE = data.deadline ? Date.parse(data.deadline) : Infinity;
     LS = "dinner-" + data.slug;
+    VIS = data.resultsVisibility || "afterClose"; // "live" | "afterClose" | "never"
+    ORG = !!data.organiserKey && location.hash === "#r-" + data.organiserKey;
     const saved = store.get(LS);
     if (saved) { (saved.picks || []).forEach((k) => state.picks.add(k)); state.top = saved.top || null; state.submitted = saved.submitted || null; }
-    document.title = data.title || "Where are we eating?";
+    document.title = ORG ? `Results · ${data.dayLabel || data.title}` : (data.title || "Where are we eating?");
+    if (ORG) { buildOrganiser(); refresh(); setInterval(() => { if (!document.hidden) refresh(); }, 15000); return; }
     buildShell(); render(); tick(); refresh();
     setInterval(() => { const was = closed(); tick(); if (closed() !== was) render(); }, 30000);
     setInterval(() => { if (!document.hidden) refresh(); }, 20000);
@@ -205,9 +209,16 @@
 
   /* ---------- Results ---------- */
   async function refresh() {
-    try { state.votes = await api.list(D.slug); state.loadErr = false; } catch (e) { state.loadErr = true; }
-    renderResults();
+    try { state.votes = dedupe(await api.list(D.slug)); state.loadErr = false; } catch (e) { state.loadErr = true; }
+    ORG ? renderOrganiser() : renderResults();
   }
+  // One vote per name: if someone votes again from another phone, their latest vote counts.
+  function dedupe(votes) {
+    const m = new Map();
+    (votes || []).forEach((v) => { const k = String(v.voter_name || "").trim().toLowerCase(); if (k) { m.delete(k); m.set(k, v); } });
+    return [...m.values()];
+  }
+  const resultsHidden = () => VIS === "never" || (VIS === "afterClose" && !closed());
   function tally(votes) {
     const c = {}, f = {};
     votes.forEach((p) => { (p.picks || []).forEach((k) => (c[k] = (c[k] || 0) + 1)); if (p.top_pick) f[p.top_pick] = (f[p.top_pick] || 0) + 1; });
@@ -222,14 +233,54 @@
     const cp = $("count-pill");
     if (total) { cp.hidden = false; $("count-text").textContent = `${total} of ${party} voted`; } else cp.hidden = true;
     const lead = rows[0];
+    if (resultsHidden()) {
+      box.innerHTML = `
+        <div class="results-head"><h2>Results</h2><span>${total} of ${party} voted</span></div>
+        <p class="empty">${VIS === "never" ? "Harry will share where we're going once everyone's voted." : `Hidden until voting closes ${esc(D.deadlineLabel || "")}, so everyone picks what they actually feel like.`}</p>
+        ${total ? `<div class="voters">${votes.map((p) => `<span class="${p.voter_name && p.voter_name.trim().toLowerCase() === me && state.submitted ? "me" : ""}">${esc(p.voter_name)}</span>`).join("")}</div>` : ""}
+        <p class="fine">You can change your vote any time before it closes. ${D.bookingNote ? esc(D.bookingNote) : "Harry books once voting closes."}</p>`;
+      return;
+    }
     box.innerHTML = `
-      <div class="results-head"><h2>Live results</h2><span>${total} of ${party} voted</span></div>
+      <div class="results-head"><h2>${closed() ? "Results" : "Live results"}</h2><span>${total} of ${party} voted</span></div>
       ${state.loadErr ? `<p class="empty">Results couldn't load right now. They'll refresh on their own.</p>`
         : !total ? `<p class="empty">No votes yet. Be the first: tap your times, star a favourite, then hit Submit vote.</p>`
         : `${lead ? `<div class="leader"><span class="k">${closed() ? "Winner" : "Leading"}</span><b>${esc(lead.v.name)} · ${fmt(lead.t)} pm</b><span>${lead.n} of ${party} can make it${lead.fav ? ` · ★ ${lead.fav} favourite${lead.fav > 1 ? "s" : ""}` : ""}</span></div>` : ""}
            <div class="res">${rows.map((r, i) => `<div class="row${i === 0 ? " lead" : ""}"><b>${esc(r.v.name)} · ${fmt(r.t)} pm${r.fav ? ` · ★${r.fav}` : ""}</b><span>${r.n} of ${party}</span><div class="bar"><i style="width:${Math.round((r.n / party) * 100)}%"></i></div></div>`).join("")}</div>
            <div class="voters">${votes.map((p) => `<span class="${p.voter_name && p.voter_name.trim().toLowerCase() === me && state.submitted ? "me" : ""}">${esc(p.voter_name)}</span>`).join("")}</div>`}
       <p class="fine">Most people free wins; stars break a tie. ${D.bookingNote ? esc(D.bookingNote) : "Harry books once voting closes."}</p>`;
+  }
+
+  /* ---------- Organiser view (private link: #r-<organiserKey>) ---------- */
+  function buildOrganiser() {
+    $("app").innerHTML = `
+      <header>
+        <div class="kicker">${esc(D.kicker)} · Organiser view</div>
+        <h1>Results</h1>
+        <p class="lede">Only you see this page. Mates ${VIS === "live" ? "see live results too" : VIS === "never" ? "never see results" : `see results after voting closes ${esc(D.deadlineLabel || "")}`}. Refreshes on its own.</p>
+        <div class="status"><span class="pill" id="deadline"><span class="dot"></span><span id="deadline-text"></span><span class="sub" id="deadline-left"></span></span></div>
+      </header>
+      <section class="results" id="org-results" aria-live="polite"><p class="empty">Loading votes…</p></section>
+      <section class="results" id="org-people" aria-live="polite" hidden></section>`;
+    tick(); setInterval(tick, 30000);
+  }
+  function renderOrganiser() {
+    const box = $("org-results"), ppl = $("org-people"); if (!box) return;
+    const votes = state.votes || [], rows = tally(votes), total = votes.length, party = D.party || total, lead = rows[0];
+    if (state.loadErr) { box.innerHTML = `<p class="empty">Votes couldn't load right now. This page will try again shortly.</p>`; return; }
+    box.innerHTML = `
+      <div class="results-head"><h2>${closed() ? "Final" : "So far"}</h2><span>${total} of ${party} voted</span></div>
+      ${!total ? `<p class="empty">No votes yet.</p>` : `
+        ${lead ? `<div class="leader"><span class="k">${closed() ? "Winner" : "Leading"}</span><b>${esc(lead.v.name)} · ${fmt(lead.t)} pm</b><span>${lead.n} of ${party} can make it${lead.fav ? ` · ★ ${lead.fav}` : ""}${rows[1] ? ` · next: ${esc(rows[1].v.name)} ${fmt(rows[1].t)} (${rows[1].n})` : ""}</span></div>` : ""}
+        <div class="res">${rows.map((r, i) => `<div class="row${i === 0 ? " lead" : ""}"><b>${esc(r.v.name)} · ${fmt(r.t)} pm${r.fav ? ` · ★${r.fav}` : ""}</b><span>${r.n} of ${party}</span><div class="bar"><i style="width:${Math.round((r.n / party) * 100)}%"></i></div></div>`).join("")}</div>`}
+      <p class="fine">Most people free wins; stars break a tie.</p>`;
+    ppl.hidden = !total;
+    ppl.innerHTML = `<div class="results-head"><h2>Who picked what</h2></div>
+      <div class="group">${votes.map((p) => {
+        const by = {}; (p.picks || []).forEach((k) => { const [id, t] = k.split("@"); if (byId[id]) (by[id] = by[id] || []).push(fmt(t)); });
+        const lines = Object.entries(by).map(([id, ts]) => `${esc(byId[id].name)} ${ts.join(", ")}`);
+        return `<div class="item"><span class="k">${esc(p.voter_name)}${p.top_pick && byId[p.top_pick] ? ` · ★ ${esc(byId[p.top_pick].name)}` : ""}</span><span class="v">${lines.join("<br>") || "No times picked"}</span></div>`;
+      }).join("")}</div>`;
   }
 
   /* ---------- Toast ---------- */

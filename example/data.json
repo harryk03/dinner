@@ -1,14 +1,14 @@
 {
  "slug": "example",
  "title": "Where are we eating Friday?",
- "kicker": "Example · Fri 30 Oct · Table for 6",
+ "kicker": "Example \u00b7 Fri 30 Oct \u00b7 Table for 6",
  "lede": "Seven spots in the CBD and Surry Hills with a table for six still free. Tap every time that works for you, star your top pick, then submit your vote.",
  "dayLabel": "Fri 30 Oct",
  "party": 6,
  "deadline": "2027-12-31T21:00:00+11:00",
  "deadlineLabel": "9 pm Thu",
  "checked": "Tables checked Thu 22 Oct, 8:15 am",
- "note": "No venue on this list had a table for six at 7:00 or 7:15. Ragazzi, Neptune’s Grotto and Pellegrino 2000 were fully booked all evening.",
+ "note": "No venue on this list had a table for six at 7:00 or 7:15. Ragazzi, Neptune\u2019s Grotto and Pellegrino 2000 were fully booked all evening.",
  "areas": [
   {
    "id": "cbd",
@@ -27,7 +27,7 @@
    "area": "cbd",
    "areaLabel": "CBD",
    "hook": "Hidden courtyard, Michelin-trained chefs, Italian with Silk Road spices.",
-   "addr": "5 Gresham St · The Lands by Capella, Circular Quay",
+   "addr": "5 Gresham St \u00b7 The Lands by Capella, Circular Quay",
    "why": "New this year. A heritage sandstone courtyard with red awnings and a chequered dining room, run by chefs from Norway's two-Michelin-star Re-naa. The Italian menu has a Silk Road accent.",
    "order": "Grilled octopus with nduja, ravioli with dukkah and pecorino, blue swimmer crab spaghetti, tiramisu",
    "know": "500-bottle wine list with 36 by the glass",
@@ -122,13 +122,13 @@
    "area": "cbd",
    "areaLabel": "CBD",
    "hook": "Two-hatted, fire-cooked Middle Eastern on Martin Place.",
-   "addr": "25 Martin Place · MLC Centre",
+   "addr": "25 Martin Place \u00b7 MLC Centre",
    "why": "Two hats. Paul Farag cooks over Blue Mountains ironbark, with dishes researched from 10th-century Arabic cookbooks. Timber columns and warm light. The big-night-out option.",
    "order": "Beef nayyeh, smoked buffalo labne, dry-aged duck, chocolate kataifi",
-   "know": "10% service charge for groups of 6+. The banquet is only compulsory from 7 people, so we can order à la carte",
+   "know": "10% service charge for groups of 6+. The banquet is only compulsory from 7 people, so we can order \u00e0 la carte",
    "links": [
     {
-     "t": "Aalia à la carte menu",
+     "t": "Aalia \u00e0 la carte menu",
      "d": "Current dinner menu (PDF)",
      "u": "https://cdn.sanity.io/files/quf0k1c7/production/1d1fb9b483d59f4517b71e297d80c5df31d44666.pdf",
      "dom": "aaliarestaurant.com",
@@ -221,7 +221,7 @@
    "areaLabel": "Surry Hills",
    "hook": "Upstairs Greek under timber rafters, rated 4.9 on OpenTable.",
    "addr": "Level 1, 433 Cleveland St (above Bar Cleveland)",
-   "why": "Justin North's Greek dining room upstairs in an 1800s building: timber rafters, sandstone walls, a long lit bar, share plates and good cocktails. Right on the Surry Hills–Redfern line.",
+   "why": "Justin North's Greek dining room upstairs in an 1800s building: timber rafters, sandstone walls, a long lit bar, share plates and good cocktails. Right on the Surry Hills\u2013Redfern line.",
    "order": "Pomegranate-cured ocean trout, garlic king prawns, lamb ribs, 800g bistecca for the table, galaktoboureko",
    "know": "Banquets at $89 or $115 a head if we want one",
    "links": [
@@ -272,7 +272,7 @@
    "area": "sh",
    "areaLabel": "Surry Hills",
    "hook": "Huge Greek room with a glass roof and a tree in the middle.",
-   "addr": "2 Baptist St · Wunderlich Lane",
+   "addr": "2 Baptist St \u00b7 Wunderlich Lane",
    "why": "From the team behind The Apollo and Cho Cho San. A lavish room with a retractable glass ceiling and a bougainvillea tree in the middle. More than 40 dishes, half of them meze.",
    "order": "Taramasalata, spanakopita, milk-fed lamb with pilafi, wood-fired whole trout, Ouzo Colada",
    "know": "Three set menus available. Very popular: booked 125 times on Thursday alone",
@@ -317,7 +317,7 @@
    "area": "sh",
    "areaLabel": "Surry Hills",
    "hook": "New York red-sauce Italian, candlelit, with DJs from 8 pm.",
-   "addr": "Wunderlich Lane · corner of Cleveland & Baptist Sts",
+   "addr": "Wunderlich Lane \u00b7 corner of Cleveland & Baptist Sts",
    "why": "Red velour, heavy curtains and candlesticks. Saucy, generous New York-style Italian with fresh pasta from Grana. Gourmet Traveller says it's been full since it opened.",
    "order": "Porchetta-crusted ribs, vodka rigate with chicken parm, fried lasagne bites, tiramisu",
    "know": "DJs from 8 pm on Fridays and the room tilts into a bar. Fun, but loud",
@@ -360,5 +360,6 @@
     }
    ]
   }
- ]
+ ],
+ "resultsVisibility": "live"
 }
